@@ -44,18 +44,6 @@ function pairwise(arr, func){
 }
 
 
-
-
-function displayVertex(point) {
-  vertex((point.x - 100) * 8, point.y + 500, (point.z + 100) * 2 );
-}
-
-function displayLine(lineArray) {
-  beginShape();
-  lineArray.forEach(displayVertex);
-  endShape();
-}
-
 function drawGrid() {
   stroke(240);
   strokeWeight(1);
@@ -83,13 +71,8 @@ function setup() {
   }
 
   background(0);
-  stroke(240);
-  strokeWeight(1);
-  fill(1);
-  for (let i = 0, len = 21; i < len; i++) {
-    line(-200, 500, 20*i-200, 200, 500, 20*i-200);
-    line(20*i-200, 500, -200, 20*i-200, 500, 200);
-  }
+  drawGrid();
+
   stroke(200);
   strokeWeight(2);
   console.log("line");
@@ -111,17 +94,4 @@ function draw() {
       line(current.x(), current.y(), current.z(), next.x(), next.y(), next.z());
     }
   });
-  //lines.forEach(forwardLine);
-  //lines.forEach(displayLine);
-//  background(0);
-//  for (let line = -2000, len = 1000; line < len; line=line+80) {
-//
-//    beginShape();
-//    for (let i = -500, len = 1500; i < len; i=i+5) {
-//      if (randomProba(10)) {
-//      vertex(i, random(-10,min(frame, 70))+150, -2*i/3+line);
-//      }
-//    }
-//    endShape();
-//  }
 }
